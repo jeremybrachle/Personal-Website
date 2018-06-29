@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+// declare the dollar sign character for access to jquery (as any type)
 declare var $: any;
 
 @Component({
@@ -14,20 +15,46 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     // collapse the navbar when a link is clicked
+    $('.navbar-brand, ul > li > a').on('click', function() {
+      $('.navbar-collapse').collapse('hide');
+    });
+
+    // collapse if clicked outside of the navbar
+    $(document).click(function(e) {
+      if (!$(e.target).is('panel-body')) {
+          $('.navbar-collapse').collapse('hide');
+      }
+    });
+
     /*
-    $('.navbar-nav>li>a').on('click', function() {
-      (<any>$('.navbar-collapse')).collapse('hide');
+    // enable everything to be clicked when the navbar is not collapsed
+    $('.navbar-collapse').on('show.bs.collapse', function () {
+      $('.SpecialCase *').prop('disabled', true);
+    });
+
+    // disable everything when the navbar is collapsed
+    // (prevents unwanted clicking when the user just
+    // wants to exit the navbar)
+    $('.navbar-collapse').on('hide.bs.collapse', function () {
+      $('.SpecialCase *').prop('disabled', false);
     });
     */
 
-    /*
-    $('a').on('click', function() {
-      $('collapse').collapse();
+    // EXPANDED NAV BAR
+    // enable everything to be clicked when the navbar is not collapsed
+    $('.navbar-collapse').on('show.bs.collapse', function () {
+      $('.PageContent *').prop('disabled', true);
     });
-    */
-   $('a').on('click', function() {
-    (<any>$('.navbar-collapse')).collapse('hide');
-  });
+
+    // COLLAPSED NAV BAR
+    // disable everything when the navbar is collapsed
+    // (prevents unwanted clicking when the user just
+    // wants to exit the navbar)
+    $('.navbar-collapse').on('hidden.bs.collapse', function () {
+      $('.PageContent *').prop('disabled', false);
+    });
+
+
   }
 
 }

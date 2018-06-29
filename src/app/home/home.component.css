@@ -1,0 +1,24 @@
+/* statement */
+.statement {
+  border: 0.1em solid black;
+  margin: 0em 3em;
+  padding: 0em 1em;
+  /* font-size: 2vw; */
+  width: 90%;
+}
+
+
+/* media queries */
+/* before collapse
+@media only screen and (min-width: 768px) {
+
+}
+*/
+/* after collapse */
+/* after collapse */
+@media only screen and (max-width: 767px) {
+  .statement {
+    font-size: 1.9vw;
+  }
+}
+

@@ -28,7 +28,7 @@
   top: 0;
   width: 100%;
   z-index: 1;
-  margin-bottom: 5em;
+  margin-bottom: 3em;
 
 }
 nav{
@@ -36,23 +36,25 @@ nav{
 }
 
 /* navbar items */
-.nav-link {
-  text-align: center;
-  font-size: 0.8em;
-  text-decoration: none;
-}
-
 ul li a {
+  font-size: 0.8em;
+  text-align: center;
   text-decoration: none;
   display: block;
-  padding: 1.7em 3em;
-}
-
-/* button for the active page */
-.active {
-  background-color: #003F87;
+  padding: 2.3em 3em;
   border-radius: 5em 0.3em;
 }
+/* hovering over other items */
+ul li a:hover {
+  background-color: #111;
+  color: white;
+}
+/* button for the active page, override the blue color for current */
+.active {
+  background-color: #003F87 !important;
+}
+
+
 
 /* media queries: */
 /* before collapse */
