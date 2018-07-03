@@ -5,6 +5,7 @@
   padding: 0em 1em;
   /* font-size: 2vw; */
   width: 90%;
+  text-align: center;
 }
 
 
@@ -15,10 +16,15 @@
 }
 */
 /* after collapse */
-/* after collapse */
 @media only screen and (max-width: 767px) {
   .statement {
     font-size: 1.9vw;
+  }
+}
+/* override to make the font readable on mobile screens */
+@media only screen and (max-width: 567px) {
+  .statement {
+    font-size: 2.7vw;
   }
 }
 
