@@ -1,0 +1,21 @@
+/* table section */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 0.1em solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  opacity: 1.0;
+}
+
+td:hover {
+  opacity: 0.5;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/* end table section */
