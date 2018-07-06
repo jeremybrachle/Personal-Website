@@ -33,3 +33,12 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 /* end table section */
+
+
+/* media queries */
+/* after collapse */
+@media only screen and (max-width: 767px) {
+  img.profileImg {
+    width: 9em;
+  }
+}
