@@ -1,0 +1,35 @@
+/*profile image */
+img.profileImg {
+  width: 15vw;
+  margin-left: auto;
+  margin-right: 1em;
+  border-radius: 5em 0.3em;
+  float: left;
+}
+
+/* disclaimer */
+.disclaimer {
+  clear: left;
+}
+
+/* table section */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 0.1em solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  opacity: 1.0;
+}
+
+td:hover {
+  opacity: 0.5;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/* end table section */
