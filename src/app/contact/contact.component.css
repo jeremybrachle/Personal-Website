@@ -1,0 +1,36 @@
+.contactMe {
+	width: 30em;
+	position: fixed;
+  border: 0.1em solid black;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  background-color: lightgrey;
+  margin: 0.8em 1em 4em 9em;
+  font-size: 0.7em;
+}
+
+img.contactImg {
+  width: 80vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -1;
+}
+
+.inputData {
+  margin: 0.2em 0em;
+  width: 100%;
+  padding: 1em;
+  display: block;
+}
+
+#message {
+  height: 12em;
+  resize: vertical;
+}
+
+button {
+  background-color: #333;
+  color: white;
+}
