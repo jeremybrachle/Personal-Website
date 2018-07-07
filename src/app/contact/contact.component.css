@@ -6,16 +6,20 @@
   padding-right: 1em;
   padding-bottom: 1em;
   background-color: lightgrey;
-  margin: 0.8em 1em 4em 9em;
-  font-size: 0.7em;
+  margin: 0em 1em 4em 9em;
+  border: 0.135em solid black;
+  box-shadow: .2em .2em #003F87;
 }
 
-img.contactImg {
-  width: 80vw;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+h2{
+  margin-top: 0.5em;
+}
+
+img {
   z-index: -1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
 }
 
 .inputData {
@@ -33,4 +37,32 @@ img.contactImg {
 button {
   background-color: #333;
   color: white;
+}
+
+/* media queries */
+/* before collapse */
+@media only screen and (min-width: 768px) {
+  h2{
+    font-size: 2.5em;
+  }
+  .contactMe{
+    font-size: 0.7em;
+  }
+  img{
+    top: 0px;
+  }
+}
+/* after collapse */
+@media only screen and (max-width: 767px) { /* navbar collapses at 767 pixels */
+  h2{
+    font-size: 3.4em;
+  }
+  .contactMe{
+    font-size: 0.5em;
+    margin-left: 3em;
+    display: block;
+  }
+  img{
+    top: 62px;
+  }
 }

@@ -11,8 +11,9 @@
   display: block;
   text-decoration: none;
   color: black;
-  box-shadow: .2em .2em #003F87;
+  box-shadow: .15em .15em #003F87;
 }
+
 /* make sure hovering doesn't change the color of it */
 .navbar-brand:hover {
   color: black;
