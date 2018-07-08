@@ -1,24 +1,48 @@
 /* statement */
 .statement {
   border: 0.1em solid black;
-  margin: 0em 3em;
-  padding: 0em 1em;
-  /* font-size: 2vw; */
-  width: 90%;
+  padding: 0em;
+  text-align: center;
+  background-color: lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: .2em .2em #003F87;
 }
 
+.container{
+  -webkit-text-fill-color: white;
+  /* text-shadow: 2px 2px 4px #000000; */
+  text-shadow: 1px 1px 2px black, 0 0 5px black, 0 0 3px #003F87;
+}
+
+img {
+  z-index: -1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+}
 
 /* media queries */
-/* before collapse
+/* before collapse */
 @media only screen and (min-width: 768px) {
-
+  .statement {
+    font-size: 1em;
+    width: 60%;
+  }
 }
-*/
-/* after collapse */
 /* after collapse */
 @media only screen and (max-width: 767px) {
   .statement {
     font-size: 1.9vw;
+    width: 60%;
+  }
+}
+/* override to make the font readable on mobile screens */
+@media only screen and (max-width: 567px) {
+  .statement {
+    font-size: 2.7vw;
+    width: 90%;
   }
 }
 
