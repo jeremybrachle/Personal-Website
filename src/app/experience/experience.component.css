@@ -19,3 +19,13 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 /* end table section */
+
+
+.my-btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-container {
+  text-align: center;
+}

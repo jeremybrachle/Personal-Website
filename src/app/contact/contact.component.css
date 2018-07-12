@@ -1,14 +1,21 @@
 .contactMe {
-	width: 30em;
 	position: fixed;
   border: 0.1em solid black;
   padding-left: 1em;
   padding-right: 1em;
   padding-bottom: 1em;
   background-color: lightgrey;
-  margin: 0em 1em 4em 9em;
+  margin-left: 9em;
+  margin-right: 1em;
+  margin-bottom: 4em;
   border: 0.135em solid black;
   box-shadow: .2em .2em #003F87;
+}
+
+.contactInfo {
+  margin-top: 1em;
+  margin-left: 0.8em;
+  margin-bottom: 1em;
 }
 
 h2{
@@ -22,20 +29,29 @@ img {
   width: 100%;
 }
 
-.inputData {
-  margin: 0.2em 0em;
-  width: 100%;
-  padding: 1em;
-  display: block;
+.emailMe {
+  color: #003F87;
+  text-decoration: underline;
 }
 
-#message {
-  height: 12em;
-  resize: vertical;
+/* font-awesome */
+.fa:hover {
+  opacity: 0.7;
 }
 
-button {
-  background-color: #333;
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-github {
+  background: #333;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
   color: white;
 }
 
@@ -46,23 +62,49 @@ button {
     font-size: 2.5em;
   }
   .contactMe{
-    font-size: 0.7em;
+    width: 27em;
+    font-size: 0.75em;
+    margin-top: 1.5em;
   }
   img{
     top: 0px;
+  }
+  .fa {
+    padding-top: 22px;
+    font-size: 30px;
+    width: 75px;
+    height: 75px;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    text-align: center;
   }
 }
 /* after collapse */
 @media only screen and (max-width: 767px) { /* navbar collapses at 767 pixels */
   h2{
-    font-size: 3.4em;
+    font-size: 3em;
   }
   .contactMe{
-    font-size: 0.5em;
+    width: 29em;
+    font-size: 0.65em;
+    margin-top: 1.5em;
     margin-left: 3em;
     display: block;
   }
   img{
     top: 62px;
+  }
+  .fa {
+    padding-top: 19px;
+    font-size: 20px;
+    width: 62px;
+    height: 62px;
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    text-align: center;
   }
 }

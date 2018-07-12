@@ -12,4 +12,9 @@ export class ExperienceComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  topFunction() {
+    window.scroll(0, 0);
+  }
+
 }
