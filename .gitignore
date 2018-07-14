@@ -32,7 +32,7 @@
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
-/src/environments/*
+environment.ts
 testem.log
 /typings
 
