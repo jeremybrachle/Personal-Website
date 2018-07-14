@@ -1,7 +1,6 @@
+import { User } from './../models/User';
 import { UserService } from './../services/user.service';
 import { Component, OnInit } from '@angular/core';
-
-
 
 @Component({
   selector: 'app-contact',
@@ -10,12 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  // make blank user object
+  user: User = {
+    name: '',
+    email: '',
+    message: ''
+  };
+
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(users => {
-      console.log(users);
-    });
+    this.userService.getUsers().subscribe();
+  }
+
+
+  onSubmit() {
+    // make sure the textboxes have data
+    if (this.user.name !== '' && this.user.email !== '' && this.user.message !== '') {
+      this.userService.addUser(this.user);
+      // make input blank
+      this.user.name = '';
+      this.user.email = '';
+      this.user.message = '';
+    }
   }
 
 }

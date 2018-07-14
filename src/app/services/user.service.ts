@@ -14,12 +14,21 @@ users: Observable<User[]>;
 
 
 constructor(public afs: AngularFirestore) {
+
+  this.userCollection = this.afs.collection('users');
+
   this.users = this.afs.collection('users').valueChanges();
  }
 
 getUsers() {
   return this.users;
 }
+
+// add users to database
+addUser(user: User) {
+  this.userCollection.add(user);
+}
+
 
 }
 

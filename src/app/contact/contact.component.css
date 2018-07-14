@@ -1,14 +1,18 @@
 .contactMe {
-	width: 30em;
+	width: 35em;
 	position: fixed;
   border: 0.1em solid black;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
   padding-bottom: 1em;
   background-color: lightgrey;
   margin: 0em 1em 4em 9em;
   border: 0.135em solid black;
   box-shadow: .2em .2em #003F87;
+}
+
+.prompt {
+  padding-bottom: 1em;
 }
 
 h2{
@@ -51,6 +55,9 @@ button {
   img{
     top: 0px;
   }
+  .prompt {
+    font-size: 1.05em;
+  }
 }
 /* after collapse */
 @media only screen and (max-width: 767px) { /* navbar collapses at 767 pixels */
@@ -64,5 +71,8 @@ button {
   }
   img{
     top: 62px;
+  }
+  .prompt {
+    font-size: 1.2em;
   }
 }
