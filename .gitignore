@@ -32,7 +32,7 @@
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
-environment.ts
+/environments/*
 testem.log
 /typings
 
@@ -43,3 +43,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/environments/environment.ts
+src/environments/environment.prod.ts
