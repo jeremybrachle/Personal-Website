@@ -35,6 +35,15 @@ tr:nth-child(even) {
 /* end table section */
 
 
+.my-btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-container {
+  text-align: center;
+}
+
 /* media queries */
 /* after collapse */
 @media only screen and (max-width: 767px) {

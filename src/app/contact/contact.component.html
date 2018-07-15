@@ -1,19 +1,31 @@
 <div class="contactMe">
   <h2>Contact</h2>
+
   <div class="prompt">Send me a message and I'll get in touch with you within 24 hours!</div>
 
   <form (ngSubmit)="onSubmit()">
     <input name="name" placeholder="Name" [(ngModel)]="user.name" class="inputData" type="text" tabindex="1" required autofocus>
-    <br>
     <input name="email" placeholder="Email" [(ngModel)]="user.email" class="inputData" type="text" tabindex="2" required>
-    <br>
     <textarea name="message" placeholder="Type your message here" [(ngModel)]="user.message" class="inputData" tabindex="3" required></textarea>
-    <br>
     <button type="submit" value="submit" class="inputData">
       Submit
     </button>
   </form>
 
+  <hr>
+  <div class="contactInfo">
+    <strong>Email:&nbsp;&nbsp;</strong><a class="emailMe" href="mailto:jeremybrachle@gmail.com">jeremybrachle@gmail.com</a>
+    <br>
+    <hr>
+    <div>You can also contact me through social media:</div>
+      <a href="https://www.instagram.com/jeremybrachle/" class="fa fa-instagram"></a>
+      <a href="https://www.linkedin.com/in/jeremy-brachle-8b4331133" class="fa fa-linkedin"></a>
+      <a href="https://github.com/jeremybrachle" class="fa fa-github"></a>
+  </div>
+
+  <div class="btn btn-primary">
+    More
+  </div>
 </div>
 
 <div>
