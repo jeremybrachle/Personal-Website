@@ -1,5 +1,4 @@
 .contactMe {
-	/* position: fixed; */
   border: 0.1em solid black;
   padding-left: 1.2em;
   padding-right: 1.2em;
@@ -13,14 +12,32 @@
 }
 
 .contactInfo {
-  margin-top: 1em;
   margin-left: 0.8em;
   margin-bottom: 1em;
 }
 
-button {
+textarea {
+  min-height: 3em;
+  max-height: 20em;
+}
+
+.contactButton {
   background-color: #333;
   color: white;
+  font-size: 1em;
+}
+
+.contactButton:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.openModal {
+  font-size: 1em;
+  float: right;
+}
+
+.closeModal {
+  font-size: 1em;
 }
 
 .inputData {

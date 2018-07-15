@@ -2,6 +2,9 @@ import { User } from './../models/User';
 import { UserService } from './../services/user.service';
 import { Component, OnInit } from '@angular/core';
 
+// declare the dollar sign character for access to jquery (as any type)
+declare var $: any;
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',

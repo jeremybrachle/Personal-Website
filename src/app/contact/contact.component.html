@@ -2,30 +2,58 @@
   <h2>Contact</h2>
 
   <div class="prompt">Send me a message and I'll get in touch with you within 24 hours!</div>
-
   <form (ngSubmit)="onSubmit()">
     <input name="name" placeholder="Name" [(ngModel)]="user.name" class="inputData" type="text" tabindex="1" required autofocus>
     <input name="email" placeholder="Email" [(ngModel)]="user.email" class="inputData" type="text" tabindex="2" required>
     <textarea name="message" placeholder="Type your message here" [(ngModel)]="user.message" class="inputData" tabindex="3" required></textarea>
-    <button type="submit" value="submit" class="inputData">
+    <button type="submit" value="submit" tabindex="4" class="btn inputData contactButton">
       Submit
     </button>
   </form>
 
-  <hr>
-  <div class="contactInfo">
-    <strong>Email:&nbsp;&nbsp;</strong><a class="emailMe" href="mailto:jeremybrachle@gmail.com">jeremybrachle@gmail.com</a>
-    <br>
-    <hr>
-    <div>You can also contact me through social media:</div>
-      <a href="https://www.instagram.com/jeremybrachle/" class="fa fa-instagram"></a>
-      <a href="https://www.linkedin.com/in/jeremy-brachle-8b4331133" class="fa fa-linkedin"></a>
-      <a href="https://github.com/jeremybrachle" class="fa fa-github"></a>
-  </div>
 
-  <div class="btn btn-primary">
-    More
+  <br>
+<div class="btn btn-secondary openModal" data-toggle="modal" data-target="#contactModal">Contact Info</div>
+<br>
+<br>
+
+<!-- contact info modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Contact Information:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="contactInfo">
+              <strong>Email:&nbsp;&nbsp;</strong><a class="emailMe" href="mailto:jeremybrachle@gmail.com">jeremybrachle@gmail.com</a>
+              <br>
+              <hr>
+              <div>You can also contact me through social media:</div>
+                <a href="https://www.instagram.com/jeremybrachle/" class="fa fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/jeremy-brachle-8b4331133" class="fa fa-linkedin"></a>
+                <a href="https://github.com/jeremybrachle" class="fa fa-github"></a>
+            </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary closeModal" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
+</div>
+
+
+
+
+
+
+
+
 </div>
 
 <div>
