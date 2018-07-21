@@ -11,15 +11,19 @@ td, th {
   opacity: 1.0;
 }
 
-td:hover {
-  opacity: 0.5;
-}
-
 tr:nth-child(even) {
   background-color: #dddddd;
 }
 /* end table section */
 
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+a:hover {
+  opacity: 0.5;
+}
 
 .my-btn {
   margin-left: auto;

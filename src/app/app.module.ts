@@ -20,23 +20,25 @@ import { UserService } from './services/user.service';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    ExperienceComponent,
-    HeaderComponent,
-    FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angularfs'),
-    AngularFirestoreModule
+   declarations: [
+      AppComponent,
+      HomeComponent,
+      AboutComponent,
+      ContactComponent,
+      ExperienceComponent,
+      HeaderComponent,
+      FooterComponent
+   ],
+   imports: [
+      BrowserModule,
+      AppRoutingModule,
+      FormsModule,
+      AngularFireModule.initializeApp(environment.firebase,
+      'angularfs'),
+      AngularFirestoreModule
   ],
   providers: [UserService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
