@@ -14,29 +14,35 @@ import { ContactComponent } from './contact/contact.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 import { environment } from './../environments/environment';
 import { UserService } from './services/user.service';
 
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    ExperienceComponent,
-    HeaderComponent,
-    FooterComponent
+   declarations: [
+      AppComponent,
+      HomeComponent,
+      AboutComponent,
+      ContactComponent,
+      ExperienceComponent,
+      HeaderComponent,
+      FooterComponent,
+      PortfolioComponent
+   ],
+   imports: [
+      BrowserModule,
+      AppRoutingModule,
+      FormsModule,
+      AngularFireModule.initializeApp(environment.firebase,
+      'angularfs'),
+      AngularFirestoreModule
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angularfs'),
-    AngularFirestoreModule
-  ],
-  providers: [UserService],
+  providers: [UserService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
