@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -36,7 +36,7 @@ import { UserService } from './services/user.service';
     AngularFireModule.initializeApp(environment.firebase, 'angularfs'),
     AngularFirestoreModule
   ],
-  providers: [UserService],
+  providers: [UserService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
