@@ -17,7 +17,12 @@ tr:nth-child(even) {
 /* end table section */
 
 a {
-  color: #005fcc;
+  color: black;
+  text-decoration: underline;
+}
+
+a:hover {
+  opacity: 0.5;
 }
 
 .my-btn {

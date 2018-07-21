@@ -14,7 +14,6 @@ import { ContactComponent } from './contact/contact.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
 
 import { environment } from './../environments/environment';
 import { UserService } from './services/user.service';
@@ -30,8 +29,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
       ContactComponent,
       ExperienceComponent,
       HeaderComponent,
-      FooterComponent,
-      PortfolioComponent
+      FooterComponent
    ],
    imports: [
       BrowserModule,
