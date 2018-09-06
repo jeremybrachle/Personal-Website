@@ -1,21 +1,203 @@
 <div class="contactMe">
-  <h2>Contact</h2>
+  <div class="contactWrapper">
+    <div class="contactHeader">
+      <h2>Contact</h2>
+    </div>
+    <div class="contactInfoButtonHeader">
+      <div class="btn fa fa-info-circle" data-toggle="modal" data-target="#contactModal"></div>
+    </div>
+
+
+  </div>
 
   <div class="prompt">Send me a message and I'll get in touch with you within 24 hours!</div>
+  <hr>
+
+  <!--
   <form (ngSubmit)="onSubmit()">
-    <input name="name" placeholder="Name" [(ngModel)]="user.name" class="inputData" type="text" tabindex="1" required autofocus>
-    <input name="email" placeholder="Email" [(ngModel)]="user.email" class="inputData" type="text" tabindex="2" required>
-    <textarea name="message" placeholder="Type your message here" [(ngModel)]="user.message" class="inputData" tabindex="3" required></textarea>
+      <input name="name" placeholder="Name" [(ngModel)]="user.name" class="inputData" type="text" tabindex="1" required>
+      <input name="email" placeholder="Email" [(ngModel)]="user.email" class="inputData" type="text" tabindex="2" required>
+      <textarea name="message" placeholder="Type your message here" [(ngModel)]="user.message" class="inputData" tabindex="3" required></textarea>
     <button type="submit" value="submit" tabindex="4" class="btn inputData contactButton">
       Submit
     </button>
   </form>
+  -->
+
+<!-- contact form -->
+<form #frm="ngForm" id="myForm">
+  <div class="form-group">
+
+    <!-- name -->
+    <label for="name" class="labelText">
+      Name*
+    </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        #nameUser="ngModel"
+        class="form-control uInput"
+        [(ngModel)]="user.name"
+        required
+        placeholder="*name is required"
+        autocomplete="off"
+        maxlength="50"
+      >
+    <!-- name error alert -->
+    <!-- check if backspace to empty text OR click out with empty text -->
+    <div *ngIf="nameUser?.touched || nameUser?.dirty">
+      <div *ngIf="nameUser?.errors?.required" class="alert alert-danger alertSpace">
+        Please Provide a Name
+      </div>
+    </div>
+    <br>
+
+    <!-- email -->
+    <label for="email" class="labelText">
+      Email*
+    </label>
+    <input
+      type="text"
+      id="email"
+      name="email"
+      #emailUser="ngModel"
+      class="form-control uInput"
+      [(ngModel)]="user.email"
+      required
+      placeholder="*email is required"
+      autocomplete="off"
+      maxlength="50"
+    >
+    <!-- email error alert -->
+    <!-- check if backspace to empty text OR click out with empty text -->
+    <div *ngIf="emailUser?.touched || emailUser?.dirty">
+        <div *ngIf="emailUser?.errors?.required" class="alert alert-danger alertSpace">
+          Please Provide an Email
+        </div>
+    </div>
+    <br>
+
+    <!-- message -->
+    <label for="message" class="labelText">
+        Type Your Message Here
+      </label>
+        <textarea
+          type="text"
+          id="message"
+          name="message"
+          #messageUser="ngModel"
+          class="form-control uInput"
+          [(ngModel)]="user.message"
+          placeholder="(optional)"
+          autocomplete="off"
+          maxlength="1000"
+        >
+        </textarea>
+  </div>
+
+  <button
+  name="button"
+  class="btn inputData contactButton"
+  [disabled]="frm.invalid"
+  data-toggle="modal"
+  data-target="#confirmSubmissionModal"
+  >
+  <!-- submit button text: -->
+  <div>
+    <!-- display this no matter what -->
+    Submit
+  </div>
+  <div *ngIf="frm.valid; then success else missingInfo">
+  </div>
+  <ng-template #success>
+    <!-- do nothing here -->
+  </ng-template>
+
+  <!-- check for missing info -->
+  <ng-template #missingInfo>
+    <div *ngIf="nameUser?.errors?.required && emailUser?.errors?.required then missingAll else missingSingular">
+    </div>
+    <ng-template #missingAll>
+      (Missing Name and Email)
+    </ng-template>
+    <ng-template #missingSingular>
+        <div *ngIf="nameUser?.errors?.required && !emailUser?.errors?.required then missingName else missingEmail">
+        </div>
+        <ng-template #missingName>
+          (Missing Name)
+        </ng-template>
+        <ng-template #missingEmail>
+            (Missing Email)
+          </ng-template>
+    </ng-template>
+  </ng-template>
+  </button>
+
+  <div *ngIf="!nameUser?.errors?.required || !emailUser?.errors?.required || user.message">
+    <div class="btn btn-secondary clearForm" (click)="frm.resetForm({})">
+      Clear Form
+    </div>
+    <br>
+    <br>
+  </div>
+
+</form>
+
+<!-- open the model for contact info-->
+<!--
+  <div class="btn btn-secondary openModal" data-toggle="modal" data-target="#contactModal">Contact Info</div>
+  <div class="btn fa fa-info-circle" data-toggle="modal" data-target="#contactModal"></div>
+-->
+
+</div>
 
 
-  <br>
-<div class="btn btn-secondary openModal" data-toggle="modal" data-target="#contactModal">Contact Info</div>
-<br>
-<br>
+<!-- modal for confirming the contact submission -->
+<div class="modal fade" id="confirmSubmissionModal" tabindex="-1" role="dialog" aria-labelledby="confirmSubmissionLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="confirmSubmissionLabel">Confirm Submission:</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="confirmInfo">
+                <h5>
+                  Confirming Your Submission Information:
+                </h5>
+                <br>
+                    <strong>Your Name:</strong>
+                  <br>
+                  "{{user.name}}"
+                  <hr>
+                  <strong>Your Email:</strong>
+                  <br>
+                  "{{user.email}}"
+                  <hr>
+                  <strong>Your message (optional):</strong>
+                  <br>
+                  "{{user.message}}"
+                  <br>
+                  <br>
+                  <button type="button" class="btn btn-secondary closeModal" data-dismiss="modal">No, I want to edit my info</button>
+                </div>
+            </div>
+           <div class="modal-footer">
+          <button type="button"
+          type="submit"
+          value="submit"
+          class="btn btn-success closeModal"
+          (click)="onSubmit()"
+          (click)="frm.resetForm({})"
+          (click)="showSuccess()"
+          data-dismiss="modal">Yes, I'm ready to submit!</button>
+        </div>
+        </div>
+      </div>
+    </div>
 
 <!-- contact info modal -->
 <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -33,27 +215,16 @@
               <br>
               <hr>
               <div>You can also contact me through social media:</div>
-                <a href="https://www.instagram.com/jeremybrachle/" class="fa fa-instagram"></a>
-                <a href="https://www.linkedin.com/in/jeremy-brachle-8b4331133" class="fa fa-linkedin"></a>
-                <a href="https://github.com/jeremybrachle" class="fa fa-github"></a>
+                <a href="https://www.instagram.com/jeremybrachle/" class="fa fa-instagram fa-contact"></a>
+                <a href="https://www.linkedin.com/in/jeremy-brachle-8b4331133" class="fa fa-linkedin fa-contact"></a>
+                <a href="https://github.com/jeremybrachle" class="fa fa-github fa-contact"></a>
             </div>
-
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary closeModal" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
 </div>
 
 <div>

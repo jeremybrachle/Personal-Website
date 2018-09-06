@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
+
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -17,6 +18,10 @@ import { FooterComponent } from './footer/footer.component';
 
 import { environment } from './../environments/environment';
 import { UserService } from './services/user.service';
+
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -35,7 +40,9 @@ import { UserService } from './services/user.service';
       FormsModule,
       AngularFireModule.initializeApp(environment.firebase,
       'angularfs'),
-      AngularFirestoreModule
+      AngularFirestoreModule,
+      BrowserAnimationsModule,
+      ToastrModule.forRoot()
   ],
   providers: [UserService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
