@@ -15,6 +15,11 @@
   float: left;
 }
 
+hr {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 .labelText {
   font-size: 1.2em;
 }
@@ -37,6 +42,7 @@
 .alertSpace {
   margin-bottom: 0em;
   border-radius: 0.8em;
+  padding: 0.3em;
 }
 
 .contactInfo {
@@ -134,17 +140,18 @@ img {
 /* before collapse */
 @media only screen and (min-width: 768px) {
   h2{
-    font-size: 2.7em;
+    font-size: 2.9em;
   }
   .contactMe{
     width: 30em;
-    font-size: 0.62em;
+    font-size: 0.55em;
     margin-top: 1.5em;
   }
   img{
     top: 0px;
   }
   .prompt {
+    margin-top: 0.3em;
     font-size: 1.2em;
     color: white;
     text-shadow: 0.5px 0.5px 0.5px black, 0 0 3px black, 0 0 1px #003F87;
@@ -168,11 +175,11 @@ img {
 /* after collapse */
 @media only screen and (max-width: 767px) { /* navbar collapses at 767 pixels */
   h2{
-    font-size: 3em;
+    font-size: 2.7em;
   }
   .contactMe{
     width: 29em;
-    font-size: 0.65em;
+    font-size: 0.60em;
     margin-top: 1.5em;
     margin-left: 3em;
     display: block;

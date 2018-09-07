@@ -9,7 +9,6 @@
 
 
   </div>
-
   <div class="prompt">Send me a message and I'll get in touch with you within 24 hours!</div>
   <hr>
 
@@ -134,7 +133,7 @@
   </ng-template>
   </button>
 
-  <div *ngIf="!nameUser?.errors?.required || !emailUser?.errors?.required || user.message">
+  <div *ngIf="(!nameUser?.errors?.required || !emailUser?.errors?.required || user.message) || ((nameUser?.touched || nameUser?.dirty) || (emailUser?.touched || emailUser?.dirty))">
     <div class="btn btn-secondary clearForm" (click)="frm.resetForm({})">
       Clear Form
     </div>
