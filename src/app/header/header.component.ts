@@ -26,20 +26,6 @@ export class HeaderComponent implements OnInit {
       }
     });
 
-    // EXPANDED NAV BAR
-    // enable everything to be clicked when the navbar is not collapsed
-    $('.navbar-collapse').on('show.bs.collapse', function () {
-      $('.PageContent *').prop('disabled', true);
-    });
-
-    // COLLAPSED NAV BAR
-    // disable everything when the navbar is collapsed
-    // (prevents unwanted clicking when the user just
-    // wants to exit the navbar)
-    $('.navbar-collapse').on('hidden.bs.collapse', function () {
-      $('.PageContent *').prop('disabled', false);
-    });
-
 
   }
 
